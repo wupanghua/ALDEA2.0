@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>Code History</title>
+    <link rel="icon" href="Y'All Doomed.png">
+</head>
+
+<style>
+    html, body, #app {
+        height: 100%;
+        margin: 0;
+        padding: 0;}
+    .individualdiv {
+        background-image: "ymjl4.png";
+        width: 100%;
+    }    
+</style>
+<body>
+    <div id="getback" style="position: absolute; margin-top:0; margin-left:0; width:7%; height:7%; background-color:transparent; z-index:1"></div>
+    <img src="ymjl0.0.png" style="margin-top: -0.5%; " width="100%">
+    <p style="position: fixed; color:rgb(0,0,0,0.6); font-family: Arial, Helvetica, sans-serif; font-size:0.7rem; margin:auto; top:8.1%; left:31%; z-index: -1">Powered by ehcyd.lnehc.cn</p>
+    <p style="position: absolute; margin-top: 13.62%; margin-left: 21.8%; font-size:0.83rem; font-family: Arial, Helvetica, sans-serif; color: darkgrey;">
+        <script>
+            var va1 = localStorage.value1
+            document.write(va1)
+        </script>
+    </p>
+    <p style="position: absolute; margin-top:13.62%; margin-left: 47.23%; font-size:0.81rem; font-family: Arial, Helvetica, sans-serif; color: darkgrey;">
+        <script>
+            var va2 = localStorage.value2
+            document.write(va2)
+        </script>
+    </p>
+    <p style="position: absolute; margin-top: 7.11%; margin-left:23.7%; font-size:0.98rem; font-family:Microsoft YaHei">
+        <script>
+            var va3 = localStorage.value3
+            document.write(va3)
+        </script>
+    </p>
+    <img src="ymjl2.png" width="100%" id="ymjl2">
+    <div id="allpreviousymjl" ></div>
+    <img src="ymjl0.png" style="position:fixed; margin:auto; top:0; left:0" width="100%">
+</body>
+
+<script>   
+    document.getElementById('getback').onclick = function(){
+        location.href="thecode.html";}
+    
+    function random(lower,upper) {return Math.floor(Math.random() * (upper - lower + 1)) + lower;}
+    var t = new Date();
+    var year = t.getFullYear();
+    var month = t.getMonth() + 1;
+    var day = t.getDate();
+    var h = random(1,4);
+    var l = random(13,19); 
+    var ymjlgender = 0; 
+    var year1; var month1; var day1;
+    var yearprevious; var monthprevious; var dayprevious; var ymjl = "";
+    var allyears; var daysinmonth; var alldaysinmonth;
+    var randomdaysinmonth; var previousdaysinmonth;
+    var i = random(9, 19); var j = random(1,59); var k = random(1,59);
+
+    document.getElementById("ymjl2").onclick = function(){
+        ++ymjlgender;
+        if(ymjlgender % 2 == 1){
+            document.getElementById("ymjl2").src = "ymjl2.1.png";}
+        else{document.getElementById("ymjl2").src = "ymjl2.png";}}
+    
+    if (day == 1){
+        if (month == 2 || month == 4 || month ==6 || month ==8 || month ==9 || month ==11){year1 = year; month1 = month - 1; day1 = 31}
+        else if (month == 5 || month == 7 || month == 10 || month == 12) {year1 = year; month1 = month - 1; day1 = 30}
+        else if (month == 1){year1 = year - 1; month1 = 12; day1 = 31}
+        else if(month == 3){year1 = year; month1 = 2; day1 = 28};}
+    else {year1 = year; month1 = month; day1 = day - 1};
+    var yesterday = year1 + ((month1 < 10) ? "-0" : "-") + month1 + ((day1 < 10) ? "-0" : "-") + day1 + " " + l + ((j < 10) ? ":0" : ":") + j + ((k < 10) ? ":0" : ":") + k;
+    var lastymjl = '<img src="ymjl4.png" style="width:100%; margin-top:-1.2%"><p style="position: absolute; margin-top:-12.9%; margin-left:57.5%; font-family: Arial, Helvetica, sans-serif; font-size:0.96rem">'+yesterday+'</p>';
+    
+    if (localStorage.Setyear == 2022){
+        monthsinyear = localStorage.Setmonth;
+        daysinmonth = localStorage.Setday; 
+        while (daysinmonth > 0){
+            var h = random(2,4); var hplus = h + 2; var i = random(9, 19); var j = random(1,59); var k = random(1,59);
+            daysinmonth -= hplus;
+            if (daysinmonth < 1){alldaysinmonth = ""}
+            else {randomdaysinmonth = "2022" + ((monthsinyear < 10) ? "-0" : "-") + monthsinyear + ((daysinmonth < 10) ? "-0" : "-") + daysinmonth + ((i < 10) ? " 0" : " ") + i + ((j < 10) ? ":0" : ":") + j + ((k < 10) ? ":0" : ":") + k;
+            previousdaysinmonth = '<img src="ymjl4.png" style="width:100%; margin-top:-1.2%"><p style="position: absolute; margin-top:-12.9%; margin-left:57.5%; font-family: Arial, Helvetica, sans-serif; font-size:0.96rem">'+randomdaysinmonth+'</p>';
+            alldaysinmonth = previousdaysinmonth;}
+            daysinmonth -= h}
+        monthsinyear--;
+        while (monthsinyear > 6){
+            var daysinmonth = 28;
+            while (daysinmonth > 0){
+                var h = random(2,4); var i = random(9, 19); var j = random(1,59); var k = random(1,59);
+                if (daysinmonth < 1){previousdaysinmonth = ""}
+                else {randomdaysinmonth = "2022" + ((monthsinyear < 10) ? "-0" : "-") + monthsinyear + ((daysinmonth < 10) ? "-0" : "-") + daysinmonth + ((i < 10) ? " 0" : " ") + i + ((j < 10) ? ":0" : ":") + j + ((k < 10) ? ":0" : ":") + k;
+                previousdaysinmonth = '<img src="ymjl4.png" style="width:100%; margin-top:-1.2%"><p style="position: absolute; margin-top:-12.9%; margin-left:57.5%; font-family: Arial, Helvetica, sans-serif; font-size:0.96rem">'+randomdaysinmonth+'</p>';}
+                alldaysinmonth += previousdaysinmonth;
+                daysinmonth -= h;};
+            monthsinyear--;}
+        document.getElementById("allpreviousymjl").innerHTML = lastymjl + alldaysinmonth}
+    else {document.getElementById("allpreviousymjl").innerHTML = lastymjl;}
+</script>
+
+</html>

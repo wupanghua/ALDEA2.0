@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>Account</title>
+    <link rel="icon" href="Y'All Doomed.png">
+</head>
+
+<style>
+    html, body, #app {
+        height: 100%;
+        margin: 0;
+        padding: 0;}    
+</style>
+
+<body>
+    <input type="checkbox" id="rememberme" checked="checked">
+            <label for="rememberme"></label>
+    <img src="logo.png"  style="width:27.4%; position:fixed; margin:auto; left:36.3%; top:2.5%;" id="logo"/>
+        <audio src="Love song - The Cure.mp3" id="bgm1"></audio>
+    <p style="font-family:'Times New Roman', Times, serif; position: absolute; margin-left: 34.9%; margin-top: 31.9%; font-weight:500; font-size:1.49rem; font-weight:600; color:black">ACCOUNT</p>    
+    <p style="font-family:'Times New Roman', Times, serif; position: absolute; margin-left: 57.8%; margin-top: 42.7%; font-weight:500; font-size:1rem;" id="btnmale">MALE</p>
+    <p style="font-family:'Times New Roman', Times, serif; position: absolute;margin-left: 30.3%; margin-top: 42.7%; font-weight:500; font-size:1rem;" id="btnfemale">FEMALE</p>
+    <p style="position:fixed; margin:auto; right:3.9%; top:2.6%; font-family:Courier New, monospace; height:0.8rem;"><a id="infos" href="information.html" style="color: black; text-decoration:none;" rel="nofollow noopener noreferrer" target="_blank">INFOS</a></p>
+    <p style="position:fixed; margin:auto; right:3.9%; top:7.1%; font-family:Courier New, monospace; height:0.8rem;"><a id="udhis" href="updateshistory.html" style="color: black" rel="nofollow noopener noreferrer" target="_blank">UDHIS</a></p>    
+        
+        <input id="u1_input" style="margin-top: 55.5%; font-family:Courier New, monospace;" value="" type="text" placeholder="FIRST FOUR ID DIGITS" emptyTips="输入身份证前四位"/><br/>
+        <input id="u2_input" style="margin-top: 66%; font-family:Courier New, monospace;" value="" type="text" placeholder="LAST FOUR ID DIGITS" emptyTips="输入身份证后四位"/><br/>
+        <input id="u3_input" style="margin-top: 74.7%; font-family:Courier New, monospace;" value="" type="text" placeholder="FIRST NAME" emptyTips="输入名"/><br/>
+        <button id="submit"><span style="display: inline-block; font-family:'Courier New', Courier, monospace; font-size: 1.2rem; ">PLACEBO</span></button>
+
+<script>
+        var bgmcount = 0;
+        document.getElementById("logo").onclick = function () {
+        ++bgmcount;
+        if(bgmcount % 2 == 1){
+            document.getElementById("bgm1").play();}
+        else{document.getElementById("bgm1").pause();}}
+
+        var number1 = document.getElementById('u1_input'),
+            number2 = document.getElementById('u2_input'),
+            firstname = document.getElementById('u3_input'),
+            localNumber1 = localStorage.getItem('number1') || ''; 
+            localNumber2 = localStorage.getItem('number2') || ''; 
+            localFirstname = localStorage.getItem('firstname') || ''; 
+            number1.value = localNumber1;
+            number2.value = localNumber2;
+            firstname.value = localFirstname;
+            
+        document.getElementById('btnfemale').onclick = function(){
+            localStorage.gender = "thecode1.2.png"};
+        document.getElementById('btnmale').onclick = function(){
+            localStorage.gender = "thecode1.1.png"};
+        
+        document.getElementById("submit").onclick=function(){
+            if (document.getElementById('rememberme').checked) {
+                localStorage.setItem('number1', number1.value);
+                localStorage.setItem('number2', number2.value);
+                localStorage.setItem('firstname', firstname.value);}
+            else {
+                localStorage.setItem('number1', '');
+                localStorage.setItem('number2', '');
+                localStorage.setItem('firstname', '');}
+            var t = new Date();
+            localStorage.Setyear = t.getFullYear();
+            localStorage.Setmonth = t.getMonth() + 1;
+            localStorage.Setday = t.getDate();
+            localStorage.value1=document.getElementById("u1_input").value;
+            localStorage.value2=document.getElementById("u2_input").value;
+            localStorage.value3=document.getElementById("u3_input").value;
+            location.href="thecode.html"}      
+</script>
+
+<style>
+        #rememberme +label::before{display:block; content:"\2661"; position:fixed; margin:auto; left:6.3%; top:1.3%; font-size:2rem; background:transparent; color:maroon;}
+        #rememberme:checked +label::before{display:block; content:"\2661"; position:fixed; margin:auto; left:6.3%; top:1,3%; font-size:2rem; background:transparent; color:black;}
+        #rememberme{display:none;}
+        #btnfemale:hover, #btnmale:hover {
+            color:maroon;}
+        #submit {
+            position: absolute; 
+            display: block; 
+            width: 84%; 
+            height: 4.6%; 
+            background-color:black; 
+            color:white; 
+            margin-top: 88%; 
+            margin-left: 8%; 
+            border: 0;}
+        #submit:hover {
+            background-color: maroon;}
+        #u1_input, #u2_input, #u3_input {
+            outline: none;
+            width: 80%;
+            height: 5%;
+            font-size: 1.1rem;
+            border-color: grey;
+            border-style: solid;
+            border-top-width: 0;
+            border-right-width: 0;
+            border-bottom-width: 1px;
+            border-left-width: 0;
+            display:block;
+            position: absolute;
+            margin-left: 10%;
+            text-align: center;}
+</style>
+</body>
+
+</html>

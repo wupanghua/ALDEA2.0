@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>The Code</title>
+    <link rel="icon" href="Y'All Doomed.png">
+</head>
+
+<style>
+    html, body, #app {
+        height: 100%;
+        margin: 0;
+        padding: 0;}    
+</style>
+
+<body>
+    <div id="getback" style="position: absolute; margin-top:0; margin-left:0; width:13%; height:10%; background-color:transparent"></div>
+    <p style="position: absolute; margin-top: 49.3%; margin-left: 27.03%; font-size:0.88rem; font-family: Arial, Helvetica, sans-serif; color: grey;">
+        <script>
+            var va1 = localStorage.value1
+            document.write(va1)
+        </script>
+    </p>
+    <p style="position: absolute; margin-top:49.3%; margin-left: 50.82%; font-size:0.88rem; font-family: Arial, Helvetica, sans-serif; color: grey;">
+        <script>
+            var va2 = localStorage.value2
+            document.write(va2)
+        </script>
+    </p>
+    <p style="position: absolute; margin-top: 42.45%; margin-left:28.9%; font-size:0.95rem; font-family:Microsoft YaHei">
+        <script>
+            var va3 = localStorage.value3
+            document.write(va3)
+        </script>
+    </p>
+    <img src="shell.gif" width="12.1%" style="position:absolute; margin-top: 41%; margin-left: 73%;">
+    <p id="time" style="position: absolute; color:rgb(75, 200, 82); font-family: Arial, Helvetica, sans-serif; margin-top: 73.2%; margin-left: 31.3%; font-size: 0.94rem;">
+        <script type="text/javascript">
+            setInterval(function(){    
+                var t = new Date();
+                var year = t.getFullYear();
+                var month = t.getMonth() + 1;
+                var day = t.getDate();
+                var hour = t.getHours();
+                var minute = t.getMinutes();
+                var second = t.getSeconds();
+                document.getElementById("time").innerHTML=year + ((month < 10) ? "-0" : "-") + month + ((day < 10) ? "-0" : "-") + day +((hour < 10) ? " 0" : " ") + hour + ((minute < 10) ? ":0" : ":") + minute + ((second < 10) ? ":0" : ":") + second;},1000);
+        </script>
+    </p>
+    <p style="position: absolute; color:grey; font-family:Arial, Helvetica, sans-serif; margin-top: 192%; margin-left: 53.4%; font-size: 0.91rem;">
+        <script type="text/javascript">
+            var t = new Date();
+            var year = t.getFullYear();
+            var month = t.getMonth() + 1;
+            var day = t.getDate();
+            if (day == 1){
+                if (month == 2 || month == 4 || month ==6 || month ==8 || month ==9 || month ==11){month = month - 1; day = 31}
+                else if (month == 5 || month == 7 || month == 10 || month == 12) {month = month - 1; day = 30}
+                else if (month == 1){year = year - 1; month = 12; day = 31}
+                else if(month == 3){month = 2; day = 28};}
+            else {day = day - 1};
+            var nowTime = year + ((month < 10) ? "-0" : "-") + month + ((day < 10) ? "-0" : "-") + day + " 23:19:17";
+            document.write(nowTime);
+        </script>
+    </p>
+    <div onclick="codechange()" style="position:absolute; width:40%; height:20%; margin-top:80%; margin-left:30%; background-color: transparent;"></div>
+    <img src="thecode1.1.png" width="100%" id="thecode1">
+    <img src="thecode2.png" width="100%" id="thecode2">
+    <img src="thecode3.png" width="100%">
+    <img src="thecode4.png" style="margin-bottom: -1.2%;" width="100%" id="thecode3">
+    <img src="button1.png" style="opacity:0.15; width:23%; position:fixed; margin:auto; right:2%; top:3.72%;">
+    <img src="button2.png" id="button1" style="width:23.2%; position:fixed; margin:auto; right:2%; top:3.72%;">
+    <img src="buttondzpz.png" id="dzpz" style="width:25.7%; position:fixed; margin:auto; right:0; top:39.7%;">
+    <img src="buttonymjl.png" id="ymjl" style="width:25.7%; position:fixed; margin:auto; right:0; top:47.4%;">
+</body>
+
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+    var page = document.getElementById('page'),
+        nav = window.navigator,
+        ua = nav.userAgent,
+        isFullScreen = nav.standalone;
+
+    if (ua.indexOf('Android') !== -1) {
+        page.style.height = window.innerHeight + 56 + 'px';
+    } else if (/iPhone|iPod|iPad/.test(ua)) {
+        page.style.height = window.innerHeight + (isFullScreen ? 0 : 60) + 'px'}
+    setTimeout(scrollTo, 0, 0, 1);}, false);    
+    
+    document.getElementById('getback').onclick = function(){
+        location.href="index.html";}
+    
+    var codesequence = 0;
+    function codechange(){
+        ++codesequence;
+        if(codesequence % 6 == 1){
+            document.getElementById("thecode2").src = "thecode2.1.png"}
+        if(codesequence % 6 == 2){
+            document.getElementById("thecode2").src = "thecode2.2.png"}
+        if(codesequence % 6 == 3){
+            document.getElementById("thecode2").src = "thecode2.3.png"}
+        if(codesequence % 6 == 4){
+            document.getElementById("thecode2").src = "thecode2.4.png"}
+        if(codesequence % 6 == 5){
+            document.getElementById("thecode2").src = "thecode2.5.png"}
+        if(codesequence % 6 == 0){
+            document.getElementById("thecode2").src = "thecode2.png"}}
+
+    document.getElementById('thecode1').onclick = function(){
+        document.getElementById("thecode1").src = localStorage.gender;}
+
+    document.getElementById('dzpz').onclick = function(){
+        location.href="ymjl.html"}
+    document.getElementById('ymjl').onclick = function(){
+        location.href="ymjl.html"}
+
+</script>
+</html>
